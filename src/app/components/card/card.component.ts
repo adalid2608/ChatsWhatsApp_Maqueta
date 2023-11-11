@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +19,17 @@ export class CardComponent {
   @Input() fechaMensaje : string = ""
   @Input() numMensajes : number = 0
   @Input() estatusMensaje : boolean | null | string = null
+
+  @Output() accionMensajeAbierto = new EventEmitter<any>();
+  
+  onOpenMessage() {
+    this.accionMensajeAbierto.emit({
+      nombreContacto: this.nombreContacto,
+      mensajeContacto: this.mensajeContacto,
+      estatusMensaje:this.estatusMensaje,
+      numMensajes: this.numMensajes
+    });
+  }
 }
 
 

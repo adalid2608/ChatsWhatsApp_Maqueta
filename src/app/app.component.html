@@ -16,6 +16,7 @@
             [estatusMensaje]="contacto.estatus"
             [fechaMensaje]="contacto.fecha" 
             [numMensajes]="contacto.numMensajes"
+            (accionMensajeAbierto)="abrirMensaje($event)"
             >
             </app-card>
         </mat-tab>

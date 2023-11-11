@@ -88,4 +88,13 @@ export class AppComponent {
     numMensajes: 5,
     estatus: true,
   }] 
+
+  abrirMensaje(event : any) : void{
+
+    if (event.numMensajes == 0) {
+      alert(`Escribiste a ${event.nombreContacto}: ${event.mensajeContacto}`)
+    } else {
+      alert(`El ultimo mensaje que ${event.nombreContacto} te escribio es: ${event.mensajeContacto}`)
+    }
+  }
 }
